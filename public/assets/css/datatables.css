@@ -1,0 +1,20 @@
+.dataTables_filter{
+    display: none;
+}
+
+.dataTables_info{
+    display: none;
+}
+
+.button {
+    background-color: #282c34;
+    transition: all ease-in-out 0.2s;
+    color: #f1f4f9;
+   }
+
+   button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #004488;
+}
