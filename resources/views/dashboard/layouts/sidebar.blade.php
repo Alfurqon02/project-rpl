@@ -35,7 +35,7 @@
                         <li class="nav-item nav-item-submenu">
                             <a href="/dashboard/admin/" class="nav-link ">
                                 <i class="ph-note-pencil"></i>
-                                <span><span>
+                                <span>Menu<span>
 
                             </a>
                             <ul class="nav-group-sub collapse">
@@ -44,28 +44,28 @@
                                     <a href="/dashboard/admin/jabatan-pengadaan"
                                         class="nav-link">
                                         <i class="ph-list-numbers"></i>
-                                        <span>Jabatan Pengadaan</span>
+                                        <span>Sub Menu</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/dashboard/admin/pejabat-pengadaan"
                                         class="nav-link">
                                         <i class="ph-list-numbers"></i>
-                                        <span>Pejabat Pengadaan</span>
+                                        <span>Sub Menu</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/dashboard/admin/jenis-dokumen"
                                         class="nav-link">
                                         <i class="ph-list-numbers"></i>
-                                        <span>Jenis Dokumen</span>
+                                        <span>Sub Menu</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/dashboard/admin/dokumen-pengadaan"
                                         class="nav-link ">
                                         <i class="ph-list-numbers"></i>
-                                        <span>Dokumen Pengadaan</span>
+                                        <span>Sub Menu</span>
                                     </a>
                                 </li>
                         </li>
