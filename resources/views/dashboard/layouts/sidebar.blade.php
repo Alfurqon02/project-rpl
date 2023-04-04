@@ -28,7 +28,7 @@
                     </a>
                 </li>
                     <li class="nav-item-header pt-0">
-                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">MENU ADMIN</div>
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">MENU 1</div>
                         <i class="ph-dots-three sidebar-resize-show"></i>
                     </li>
 
