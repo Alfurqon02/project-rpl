@@ -14,7 +14,7 @@ class Pesanan extends Model
     protected $guarded = ['id'];
 
     public function meja(){
-        return $this->belongsToMany(Meja::class, 'id_meja', 'id');
+        return $this->belongsToMany(Meja::class,'meja_pesanan', 'id_pesanan', 'id_meja');
     }
 
     public function parameterStatusPesanan(){

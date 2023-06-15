@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pesanan;
 use App\Models\MejaPesanan;
-use App\Models\Meja;
 use Illuminate\Http\Request;
 
-class PesananController extends Controller
+class MejaPesananController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pesanan.index', [
-            'pesanan' => Pesanan::with('meja')->get(),
-        ]);
+        //
     }
 
     /**
@@ -38,7 +34,7 @@ class PesananController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Pesanan $pesanan)
+    public function show(MejaPesanan $mejaPesanan)
     {
         //
     }
@@ -46,7 +42,7 @@ class PesananController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pesanan $pesanan)
+    public function edit(MejaPesanan $mejaPesanan)
     {
         //
     }
@@ -54,7 +50,7 @@ class PesananController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pesanan $pesanan)
+    public function update(Request $request, MejaPesanan $mejaPesanan)
     {
         //
     }
@@ -62,7 +58,7 @@ class PesananController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pesanan $pesanan)
+    public function destroy(MejaPesanan $mejaPesanan)
     {
         //
     }
