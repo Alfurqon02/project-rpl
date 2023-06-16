@@ -41,5 +41,17 @@
                 </li>
             </ul>
         </div>
+        <div class="sidebar-section">
+            <ul class="nav nav-sidebar" data-nav-type="accordion">
+                <li class="nav-item">
+                    <a href="{{ route('history') }}" class="nav-link">
+                        <i class="ph-house fs-5"></i>
+                        <span>
+                            History
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

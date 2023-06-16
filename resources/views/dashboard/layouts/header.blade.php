@@ -8,7 +8,7 @@
         <div class="navbar-brand flex-1 flex-lg-0">
             <a href="/" class="d-inline-flex align-items-center text-reset">
                 <img src="" alt="">
-                <h5 class="d-none d-sm-inline-block h-35px ms-3 m-0">DNA Spot Kafe</h5>
+                <h5 class="d-none d-sm-inline-block h-35px ms-3 m-0">DNA Spot Cafe</h5>
             </a>
         </div>
         <ul class="nav flex-row justify-content-end order-1 order-lg-2">

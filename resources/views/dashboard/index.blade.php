@@ -26,26 +26,19 @@
                     <h1>Selamat Datang, Username</h1>
                 </div>
             </div>
-            <div class="card-body">
-                        <h5 class="mb-0">Riwayat Pesanan</h5>
-                    <table class="table datatable-basic" style="bPaginate: false;">
-                        <thead>
-                            <tr>
-                                <th>Nama Pemesan</th>
-                                <th>Total Pembayaran</th>
-                                <th>Status Pesanan</th>
-                                <th>Status Pembayaran</th>
-                                <th>Meja</th>
-                                <th>Area</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-            </div>
-
+            <div class="m-3" id='calendar'></div>
         </div>
     </div>
+    
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'timeGridWeek'
+        });
+        calendar.render();
+      });
+
+    </script>
 @endsection
