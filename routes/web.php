@@ -21,4 +21,3 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/pesanan', [PesananController::class, 'index'])->name('pesanan');
-

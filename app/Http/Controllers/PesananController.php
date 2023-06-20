@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pesanan;
-use App\Models\MejaPesanan;
-use App\Models\Meja;
 use Illuminate\Http\Request;
 
 class PesananController extends Controller
@@ -14,8 +12,8 @@ class PesananController extends Controller
      */
     public function index()
     {
-        return view('pesanan.index', [
-            'pesanan' => Pesanan::with('meja')->get(),
+        return view ('pesanan.index',[
+            
         ]);
     }
 

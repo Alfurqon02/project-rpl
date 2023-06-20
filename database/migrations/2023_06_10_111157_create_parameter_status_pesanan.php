@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('parameter_status_pesanan', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
             $table->timestamps();
         });
     }

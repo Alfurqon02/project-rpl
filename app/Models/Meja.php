@@ -17,11 +17,7 @@ class Meja extends Model
         return $this->belongsTo(Area::class, 'id_area', 'id');
     }
 
-    public function mejaPesanan(){
-        return $this->belongsToMany(Pesanan::class,'meja_pesanan', 'id_meja', 'id');
-    }
-
-    public function pesanan() {
-        return $this->belongsToMany(Pesanan::class, 'meja_pesanan','id_meja', 'id_pesanan');
+    public function pesanan(){
+        return $this->belongsToMany(Pesanan::class);
     }
 }

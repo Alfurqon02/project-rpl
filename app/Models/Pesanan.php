@@ -14,15 +14,15 @@ class Pesanan extends Model
     protected $guarded = ['id'];
 
     public function meja(){
-        return $this->belongsToMany(Meja::class,'meja_pesanan', 'id_pesanan', 'id_meja');
+        return $this->belongsToMany(Meja::class, 'id_meja', 'id');
     }
 
     public function parameterStatusPesanan(){
         return $this->belongsTo(ParameterStatus::class, 'id_parameter', 'id');
     }
 
-    public function menuPesanan(){
-        return $this->hasMany(MenuPesanan::class, 'id_pesanan', 'id');
+    public function menu(){
+        return $this->belongsToMany(Menu::class);
     }
 
     public function createdBy(){
