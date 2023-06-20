@@ -30,7 +30,7 @@ const DatatableAPI = function() {
             "columnDefs": [{
                 "searchable": false,
                 "orderable": true,
-                width: 100,
+                // width: 100,
                 "targets": 0,
             },
             {

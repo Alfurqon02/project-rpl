@@ -17,13 +17,11 @@ return new class extends Migration
             $table->string('no_hp_pemesan');
             $table->string('total_pembayaran');
             $table->unsignedBigInteger('status_pesanan');
-            $table->unsignedBigInteger('id_meja');
-            $table->unsignedBigInteger('id_menu');
-            $table->unsignedBigInteger('created_by');
+            $table->boolean('status_pembayaran');
+            $table->time('jam_booking');
+            $table->unsignedBigInteger('created_by')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_meja')->references('id')->on('meja');
-            $table->foreign('id_menu')->references('id')->on('menu');
             $table->foreign('status_pesanan')->references('id')->on('parameter_status_pesanan');
         });
     }

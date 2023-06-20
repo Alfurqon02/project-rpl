@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Meja;
+use App\Models\Menu;
+use DateTimeInterface;
+use App\Models\ParameterStatus;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pesanan extends Model
 {
@@ -13,8 +17,19 @@ class Pesanan extends Model
 
     protected $guarded = ['id'];
 
+    public function getDates(){
+        return [
+            'created_at'
+        ];
+    }
+
+    protected function serializeDate(DateTimeInterface $created_at): string
+{
+    return $created_at->format('Y-m-d');
+}
+
     public function meja(){
-        return $this->belongsToMany(Meja::class, 'id_meja', 'id');
+        return $this->belongsToMany(Meja::class, 'meja_pesanan', 'id_pesanan', 'id_meja');
     }
 
     public function parameterStatusPesanan(){
@@ -22,7 +37,7 @@ class Pesanan extends Model
     }
 
     public function menu(){
-        return $this->belongsToMany(Menu::class);
+        return $this->belongsToMany(Menu::class, 'menu_pesanan', 'id_menu', 'id_pesanan');
     }
 
     public function createdBy(){

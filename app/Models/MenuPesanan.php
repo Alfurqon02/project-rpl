@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Menu;
+use App\Models\Pesanan;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class MenuPesanan extends Model
+class MenuPesanan extends Pivot
 {
     use HasFactory;
 
@@ -14,10 +17,10 @@ class MenuPesanan extends Model
     protected $guarded = ['id'];
 
     public function menu(){
-        return $this->belongsToMany(Menu::class, 'id_menu', 'id');
+        return $this->belongsToMany(Menu::class,'menu_pesanan', 'id_menu', 'id_pesanan');
     }
 
     public function pesanan(){
-        return $this->belongsToMany(Pesanan::class, 'id_pesanan', 'id');
+        return $this->belongsToMany(Pesanan::class, 'menu_pesanan', 'id_menu', 'id_pesanan');
     }
 }

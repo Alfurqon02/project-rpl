@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->unsignedBigInteger('id_kategori');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->timestamps();
 
             $table->foreign('id_kategori')->references('id')->on('kategori');

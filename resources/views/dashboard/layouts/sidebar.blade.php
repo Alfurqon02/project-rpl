@@ -29,15 +29,18 @@
                 </li>
             </ul>
         </div>
+
         <div class="sidebar-section">
             <ul class="nav nav-sidebar" data-nav-type="accordion">
-                <li class="nav-item">
-                    <a href="{{ route('pesanan') }}" class="nav-link">
-                        <i class="ph-house fs-5"></i>
-                        <span>
-                            Pesanan
-                        </span>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link">
+                        <i class="ph-note-pencil"></i>
+                        <span>Pesanan</span>
                     </a>
+                    <ul class="nav-group-sub collapse">
+                        <li class="nav-item"><a href="{{ route('pesanan.index') }}" class="nav-link">Buat Pesanan</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Tampilan Kitchen</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>

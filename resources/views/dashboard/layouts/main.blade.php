@@ -6,20 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {{-- CSS Files --}}
+    <link href="{{ asset('assets/fonts/inter/inter.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/icons/phosphor/styles.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/ltr/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/js/bs-fileinput/css/fileinput.min.css') }}" media="all" rel="stylesheet"
         type="text/css" />
     <link href="{{ asset('assets/css/dselect.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/bootstrap-toggle.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/booking-seat.css') }}" rel="stylesheet" type="text/css">
     {{-- JS Files --}}
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/demo/demo_configurator.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/vendor/ui/moment/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/vendor/pickers/datepicker.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/vendor/pickers/daterangepicker.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/picker_date.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/vendor/tables/datatables/datatables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/demo/pages/form_multiselect.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/vendor/forms/selects/bootstrap_multiselect.js') }}"></script>
     {{-- <script type="text/javascript" src="{{ asset('assets/js/vendor/tables/datatables/extensions/scroller.min.js') }}"></script> --}}
     <script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/datatables_basic.js') }}"></script>
@@ -30,7 +35,8 @@
     </script>
     <script type="text/javascript" src="{{ asset('assets/js/dselect.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap-toggle.min.js') }}"></script>
-    <title>PBJ Report | Dashboard</title>
+
+    <title>DNA Coffe | Dashboard</title>
 </head>
 
 <body>

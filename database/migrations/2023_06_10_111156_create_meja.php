@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('kode');
             $table->unsignedBigInteger('id_area');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->timestamps();
 
             $table->foreign('id_area')->references('id')->on('area');

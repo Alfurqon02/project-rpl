@@ -18,6 +18,6 @@ class Meja extends Model
     }
 
     public function pesanan(){
-        return $this->belongsToMany(Pesanan::class);
+        return $this->belongsToMany(Pesanan::class, 'meja_pesanan', 'id_pesanan', 'id_meja');
     }
 }
