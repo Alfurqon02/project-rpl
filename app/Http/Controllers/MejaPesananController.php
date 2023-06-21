@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\MejaPesanan;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreMejaPesananRequest;
+use App\Http\Requests\UpdateMejaPesananRequest;
 
 class MejaPesananController extends Controller
 {
@@ -26,7 +27,7 @@ class MejaPesananController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(MejaPesanan $request)
     {
         //
     }
@@ -50,7 +51,7 @@ class MejaPesananController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, MejaPesanan $mejaPesanan)
+    public function update(MejaPesanan $request, MejaPesanan $mejaPesanan)
     {
         //
     }

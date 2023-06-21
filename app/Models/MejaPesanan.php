@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Meja;
+use App\Models\Pesanan;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class MejaPesanan extends Model
 {
@@ -14,10 +17,10 @@ class MejaPesanan extends Model
     protected $guarded = ['id'];
 
     public function meja(){
-        return $this->belongsTo(Meja::class, 'id_meja', 'id');
+        return $this->belongsToMany(Meja::class, 'meja_pesanan', 'id_pesanan', 'id_meja');
     }
 
     public function pesanan(){
-        return $this->belongsTo(Pesanan::class, 'id_pesanan', 'id');
+        return $this->belongsToMany(Pesanan::class, 'id_pesanan', 'id');
     }
 }

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('total_pembayaran');
             $table->unsignedBigInteger('status_pesanan');
             $table->boolean('status_pembayaran');
-            $table->unsignedBigInteger('created_by');
+            $table->time('jam_booking');
+            $table->unsignedBigInteger('created_by')->nullable();
             $table->timestamps();
 
             $table->foreign('status_pesanan')->references('id')->on('parameter_status_pesanan');
