@@ -26,19 +26,18 @@
                     <h1>Selamat Datang, Username</h1>
                 </div>
             </div>
+            <h3 class="m-3">Timeline</h3>
             <div class="m-3" id='calendar'></div>
         </div>
     </div>
     
     <script>
-
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'timeGridWeek'
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'timeGridWeek'
+            });
+            calendar.render();
         });
-        calendar.render();
-      });
-
     </script>
 @endsection
