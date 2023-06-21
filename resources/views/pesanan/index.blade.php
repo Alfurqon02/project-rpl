@@ -62,7 +62,7 @@
                                     <button type="button" class="btn btn-outline-success btn-icon"
                                         data-id="{{ $p->id }}" onclick="" data-bs-toggle="modal"
                                         data-bs-target="#showDetail"><i class="ph-eye"></i></button>
-                                    <a href="#" class="btn btn-outline-warning btn-icon"><i class="ph-pencil"></i></a>
+                                    <a href="{{ route('pesanan.edit', $p->id) }}" class="btn btn-outline-warning btn-icon"><i class="ph-pencil"></i></a>
                                     <button type="button" class="btn btn-outline-danger btn-icon"
                                         data-id="{{ $p->id }}" onclick="" data-bs-toggle="modal"
                                         data-bs-target="#confirmDelete"><i class="ph-trash"></i></button>
@@ -111,37 +111,43 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <table>
+                    <table class="table">
                         <tr>
-                            <th>Nama Pemesan : </th>
+                            <th>Nama Pemesan</th>
                             <td id="nama_pemesan"></td>
                         </tr>
                         <tr>
-                            <th>No. Handphone : </th>
+                            <th>No. Handphone</th>
                             <td id="no_hp_pemesan"></td>
                         </tr>
                         <tr>
-                            <th>Area : </th>
+                            <th>Area</th>
                             <td id="nama_area"></td>
                         </tr>
+                        <div id="menu-loop">
+                            <tr>
+                                <th>Menu</th>
+                                <td id="menu"></td>
+                            </tr>
+                        </div>
                         <tr>
-                            <th>Meja : </th>
+                            <th>Meja</th>
                             <td id="kode_meja"></td>
                         </tr>
                         <tr>
-                            <th>Total Pembayaran : </th>
+                            <th>Total Pembayaran</th>
                             <td id="total_pembayaran"></td>
                         </tr>
                         <tr>
-                            <th>Status Pesanan : </th>
+                            <th>Status Pesanan</th>
                             <td id="status_pesanan"></td>
                         </tr>
                         <tr>
-                            <th>Jam Booking : </th>
+                            <th>Jam Booking</th>
                             <td id="jam_booking"></td>
                         </tr>
                         <tr>
-                            <th>Tanggal Pesanan : </th>
+                            <th>Tanggal Pesanan</th>
                             <td id="tanggal_pesanan"></td>
                         </tr>
                     </table>
@@ -169,27 +175,66 @@
 
             $.get(url, function(response) {
                 response = JSON.parse(response)
-                var nama_pemesan = response[0].nama_pemesan;
-                var no_hp_pemesan = response[0].no_hp_pemesan;
-                var nama_area = response[0].nama_area;
-                var kode_meja = response[0].kode_meja;
-                var total_pembayaran = response[0].total_pembayaran;
-                var status_pesanan = response[0].status_pesanan;
-                var jam_booking = response[0].jam_booking;
-                var tanggal_pesanan = new Date(response[0].tanggal_pesanan).toLocaleDateString('en-US');
-
-
-                // $(e.currentTarget).find('td#nama').text(nama).attr('class', 'w-75');
-                $(e.currentTarget).find('td#nama_pemesan').text(nama_pemesan);
-                $(e.currentTarget).find('td#no_hp_pemesan').text(no_hp_pemesan);
-                $(e.currentTarget).find('td#nama_area').text(nama_area);
-                $(e.currentTarget).find('td#kode_meja').text(kode_meja);
-                $(e.currentTarget).find('td#total_pembayaran').text(total_pembayaran);
-                $(e.currentTarget).find('td#status_pesanan').text(status_pesanan);
-                $(e.currentTarget).find('td#jam_booking').text(jam_booking);
-                $(e.currentTarget).find('td#tanggal_pesanan').text(tanggal_pesanan);
+                for (let i=0;i<response.length;i++){
+                    var nama_pemesan = response[i].nama_pemesan;
+                    var no_hp_pemesan = response[i].no_hp_pemesan;
+                    var menu = response[i].menu;
+                    var nama_area = response[i].nama_area;
+                    var kode_meja = response[i].kode_meja;
+                    var total_pembayaran = response[i].total_pembayaran;
+                    var status_pesanan = response[i].status_pesanan;
+                    var jam_booking = response[i].jam_booking;
+                    var tanggal_pesanan = new Date(response[i].tanggal_pesanan).toLocaleDateString('en-US');
+                    console.log(response[i])
+                    // $(e.currentTarget).find('td#nama').text(nama).attr('class', 'w-75');
+                    $(e.currentTarget).find('td#nama_pemesan').text(nama_pemesan);
+                    $(e.currentTarget).find('td#no_hp_pemesan').text(no_hp_pemesan);
+                    if ($(e.currentTarget).find('td#nama_area').text() == ""){
+                        $(e.currentTarget).find('td#nama_area').text(nama_area);
+                    } else {
+                        var lastArea = $(e.currentTarget).find('td#nama_area').text().split(', ')
+                        lastArea = lastArea[lastArea.length - 1]
+                        if (lastArea != nama_area){
+                            $(e.currentTarget).find('td#nama_area').text(lastArea + ', ' + nama_area)
+                        }
+                    }
+                    if ($(e.currentTarget).find('td#menu').text() == ""){
+                        $(e.currentTarget).find('td#menu').text(menu);
+                    } else {
+                        var lastMenu = $(e.currentTarget).find('td#menu').text().split(', ')
+                        lastMenu = lastMenu[lastMenu.length - 1]
+                        if (lastMenu != menu){
+                            $(e.currentTarget).find('td#menu').text(lastMenu + ', ' + menu)
+                        }
+                    }
+                    if ($(e.currentTarget).find('td#kode_meja').text() == ""){
+                        $(e.currentTarget).find('td#kode_meja').text(kode_meja);
+                    } else {
+                        var lastMeja = $(e.currentTarget).find('td#kode_meja').text().split(', ')
+                        lastMeja = lastMeja[lastMeja.length - 1]
+                        if (lastMeja != kode_meja){
+                            $(e.currentTarget).find('td#kode_meja').text(lastMeja + ', ' + kode_meja)
+                        }
+                    }
+                    $(e.currentTarget).find('td#total_pembayaran').text(total_pembayaran);
+                    $(e.currentTarget).find('td#status_pesanan').text(status_pesanan);
+                    $(e.currentTarget).find('td#jam_booking').text(jam_booking);
+                    $(e.currentTarget).find('td#tanggal_pesanan').text(tanggal_pesanan);
+            }
 
             });
+        });
+
+        $('#showDetail').on('hide.bs.modal', function (e) {
+            $(e.currentTarget).find('td#nama_pemesan').text("");
+            $(e.currentTarget).find('td#no_hp_pemesan').text("");
+            $(e.currentTarget).find('td#nama_area').text("");
+            $(e.currentTarget).find('td#menu').text("");
+            $(e.currentTarget).find('td#kode_meja').text("");
+            $(e.currentTarget).find('td#total_pembayaran').text("");
+            $(e.currentTarget).find('td#status_pesanan').text("");
+            $(e.currentTarget).find('td#jam_booking').text("");
+            $(e.currentTarget).find('td#tanggal_pesanan').text("");
         });
     </script>
 @endsection
