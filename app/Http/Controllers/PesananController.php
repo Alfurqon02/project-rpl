@@ -60,7 +60,7 @@ class PesananController extends Controller
 
         }
 
-        // return redirect('pesanan.index')->with('success', 'Pesanan berhasil dibuat');
+        return redirect(route('pesanan.index'))->with('success', 'Pesanan berhasil dibuat');
     }
 
     /**

@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::resource('/pesanan', PesananController::class);
 Route::get('/api/pesanan/{id}', [PesananController::class, 'tampilanKitchen'])->name('apiPesanan');
+Route::get('/events', [EventController::class, 'index']);

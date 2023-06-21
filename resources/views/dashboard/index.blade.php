@@ -35,9 +35,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'timeGridWeek'
+                initialView: 'timeGridWeek',
+                events: '/events',
+                eventClick: function(info) {
+                    window.location.href = info.event.url;
+                }
             });
             calendar.render();
         });
+    </script>
     </script>
 @endsection
