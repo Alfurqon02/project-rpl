@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             AreaSeeder::class,
             MejaSeeder::class,
             StatusPesan::class,
+            UserSeeder::class,
         ]);
     }
 }
