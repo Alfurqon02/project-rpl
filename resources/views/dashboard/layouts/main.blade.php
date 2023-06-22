@@ -35,9 +35,10 @@
     </script>
     <script type="text/javascript" src="{{ asset('assets/js/dselect.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap-toggle.min.js') }}"></script>
-    <title>PBJ Report | Dashboard</title>
+
 
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <title>PBJ Report | Dashboard</title>
 </head>
 
 <body>

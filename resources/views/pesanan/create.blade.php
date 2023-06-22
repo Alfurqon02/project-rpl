@@ -55,7 +55,22 @@
                         <input type="time" class="form-control" name="jam_booking">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-2">
+                        <label class="col-form-label">Menu</label>
+                        <div class="col">
+                            <select class="form-control multiselect" multiple="multiple" name="menu_pesanan[]">
+                                @foreach ($kategori as $k)
+                                <optgroup label="{{ $k->nama }}">
+                                    @foreach ($k->menu as $m)
+                                    <option value="{{ $m->id }}">{{ $m->nama }}</option>
+                                    @endforeach
+                                </optgroup>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
                         <label class="col-form-label">Meja</label>
                         <div class="col">
                             <select class="form-control multiselect" multiple="multiple" name="meja_pesanan[]">

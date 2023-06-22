@@ -138,7 +138,7 @@
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'timeGridWeek',
-                timeFormat: 'H(:mm)',
+                //timeFormat: 'H(:mm)',
                 events: 
                 [
                     @foreach ($pesanan as $event)
