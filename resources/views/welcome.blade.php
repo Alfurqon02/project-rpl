@@ -243,11 +243,7 @@
                         <a href="assets_landing_page/img/indoor.png" class="img-pop-home">
                             <img class="img-fluid" src="assets_landing_page/img/indoor.png" alt="">
                         </a>	
-                        {{-- <div class="row">
-                            <div class="col-lg-6">
-	
-                            </div>
-                        </div> --}}
+
                     </div>
                 </div>
             </div>	
@@ -272,14 +268,7 @@
                             <div class="title-div justify-content-between d-flex">
                                 <h4>Fasilitas</h4>
                             </div>
-                            <p>
-                                <ul type="square">
-                                    <li><i class="bi bi-projector-fill"><strong>LCD Projector</strong> Rp 50.000/jam</i></li>
-                                    <li><strong>Sound System</strong> Rp 50.000/jam</li>
-                                    <li><strong>Wifi</strong></li>
-                                    <li><strong>Infused Water</strong></li>
-                                </ul>
-                            </p>								
+                            <img src="assets_landing_page/img/facilities.png" alt="">
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -287,7 +276,6 @@
                             <div class="title-div justify-content-between d-flex">
                                 <h4>Rules</h4>
                             </div>
-                            <ul type="square">
                                 <li><p><strong>Reservasi</strong> Minimal 10 orang (Dibawah 10 orang akan dikenakan biaya tambahan Rp 50.000/jam)</p></li>
                                 <li><p><strong>Reservasi</strong> Private Meeting Room Rp 100.000/jam</p></li>
                                 <li><p><strong>Reservasi</strong> Weekend Reservasi max jam 17:00</p></li>
@@ -296,7 +284,7 @@
                                 <li><p><strong>Photo product</strong><br>
                                         ~ HP  : Konsumsi makanan/minuman minimal Rp 75.000 & Promote DNA Spot Cafe <br>
                                         ~ Pro : Konsumsi makanan/minuman minimal Rp 150.000 & Promote DNA Spot Cafe </p></li>
-                                </ul>							
+					
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -304,7 +292,8 @@
                             <div class="title-div justify-content-between d-flex">
                                 <h4>Promo</h4>
                             </div>
-                            <p><strong>Weekdays Afternoon</strong> (12.00-17.00) -> 10% Discount</p>
+                            <img src="assets_landing_page/img/disc.png" alt="">
+
                         </div>
                     </div>											
                 </div>
