@@ -20,7 +20,7 @@
                             alt="">
                         <span class="status-indicator bg-success"></span>
                     </div>
-                    <span class="d-none d-lg-inline-block mx-lg-2">Username</span>
+                    <span class="d-none d-lg-inline-block mx-lg-2">{{Auth::user()->name}}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <form action="{{route('actionlogout')}}" method="post">
