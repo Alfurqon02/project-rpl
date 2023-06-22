@@ -45,6 +45,7 @@ class PesananController extends Controller
             'total_pembayaran' => 'required',
             'status_pembayaran' => 'required',
             'status_pesanan' => 'required',
+            'tanggal_booking' => 'required',
             'jam_booking' => 'required'
         ]);
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pesanan;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -11,7 +13,31 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        // Menghitung jumlah pesanan
+        $jumlahPesanan = Pesanan::count();
+
+        // Menghitung pemasukan
+        $pemasukan = Pesanan::sum('total_pembayaran');
+
+        // Menghitung jumlah meja terpesan
+        $jumlahMejaTerpesan = Pesanan::where('status_pesanan', '3')->count();
+
+        // Menghitung jumlah pesanan yang belum selesai
+        $jumlahPesananBelumSelesai = Pesanan::where('status_pembayaran', '0')->count();    
+        
+        $pesanan = Pesanan::all();
+
+        // $events = [];
+
+        // foreach ($pesanan as $pesan) {
+        //     $start = Carbon::createFromFormat('H:i:s', $pesan->jam_booking)->format('Y-m-d H:i:s');
+        //     $events[] = [
+        //         'title' => $pesan->nama_pemesan,
+        //         'start' => $start,
+        //     ];
+        // }
+
+        return view('dashboard.index', compact('jumlahPesanan', 'pemasukan', 'jumlahMejaTerpesan', 'jumlahPesananBelumSelesai', 'pesanan'));  
     }
 
     /**

@@ -28,7 +28,9 @@
                             <span class="card-title-text">Jumlah Pesanan</span>
                         </h5>
                         <h2 class="card-text">
-                            <span class="card-text-content">{{ $jumlahPesanan }}</span>
+                            <span class="card-text-content">
+                                {{ $jumlahPesanan }}
+                            </span>
                         </h2>
                     </div>
                 </div>
@@ -40,7 +42,9 @@
                             <span class="card-title-text">Pemasukan</span>
                         </h5>
                         <h2 class="card-text">
-                            <span class="card-text-content">{{ $pemasukan }}</span>
+                            <span class="card-text-content">
+                                {{ $pemasukan }}
+                            </span>
                         </h2>
                     </div>
                 </div>
@@ -52,7 +56,9 @@
                             <span class="card-title-text">Jumlah Meja Terpesan</span>
                         </h5>
                         <h2 class="card-text">
-                            <span class="card-text-content">{{ $jumlahMejaTerpesan }}</span>
+                            <span class="card-text-content">
+                                {{ $jumlahMejaTerpesan }}
+                            </span>
                         </h2>
                     </div>
                 </div>
@@ -61,10 +67,12 @@
                 <div class="card bg-danger text-white card-h-100" style="background-color: #343a40; border-color: #f8f9fa;">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <span class="card-title-text">Jumlah Pesanan Belum Selesai</span>
+                            <span class="card-title-text">Jumlah Pesanan Belum Bayar</span>
                         </h5>
                         <h2 class="card-text">
-                            <span class="card-text-content">{{ $jumlahPesananBelumSelesai }}</span>
+                            <span class="card-text-content">
+                                {{ $jumlahPesananBelumSelesai }}
+                            </span>
                         </h2>
                     </div>
                 </div>
@@ -75,7 +83,8 @@
                 <div class="m-3">
                     <h1>Selamat Datang, Username</h1>
                 </div>
-            </div>
+            </div>            
+
             <h3 class="m-3">Timeline</h3>
             <div class="m-3" id='calendar'></div>
         </div>
@@ -129,7 +138,16 @@
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'timeGridWeek',
-                events: '/events',
+                timeFormat: 'H(:mm)',
+                events: 
+                [
+                    @foreach ($pesanan as $event)
+                    {
+                        title : '{{ $event->nama_pemesan }}',
+                        start : '{{ $event->tanggal_booking}}T{{ $event->jam_booking }}',
+                    }    
+                    @endforeach
+                ],
                 eventClick: function(info) {
                     window.location.href = info.event.url;
                 }

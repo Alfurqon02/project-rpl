@@ -44,6 +44,12 @@
                         <label class="form-label">Total Pembayaran</label>
                         <input type="number" class="form-control" placeholder="Total Pembayaran" name="total_pembayaran">
                     </div>
+
+                    <div class="mb-2">
+                        <label class="form-label">Tanggal Booking</label>
+                        <input type="date" class="form-control" name="tanggal_booking">
+                    </div>
+
                     <div class="mb-2">
                         <label class="form-label">Jam Booking</label>
                         <input type="time" class="form-control" name="jam_booking">
