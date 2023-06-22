@@ -81,7 +81,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="m-3">
-                    <h1>Selamat Datang, Username</h1>
+                    <h1>Selamat Datang, {{Auth::user()->name}}</h1>
                 </div>
             </div>            
 

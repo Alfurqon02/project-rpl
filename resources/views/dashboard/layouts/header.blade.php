@@ -5,7 +5,7 @@
                 <i class="ph-list"></i>
             </button>
         </div>
-        <div class="navbar-brand flex-1 flex-lg-0">
+        <div class="navbar-brand flex-1 flex-lg-0" href="{{route('dashboard')}}">
             <a href="/" class="d-inline-flex align-items-center text-reset">
                 <img src="" alt="">
                 <h5 class="d-none d-sm-inline-block h-35px ms-3 m-0">DNA Spot Cafe</h5>
@@ -20,10 +20,10 @@
                             alt="">
                         <span class="status-indicator bg-success"></span>
                     </div>
-                    <span class="d-none d-lg-inline-block mx-lg-2">Username</span>
+                    <span class="d-none d-lg-inline-block mx-lg-2">{{Auth::user()->name}}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <form action="" method="post">
+                    <form action="{{route('actionlogout')}}" method="post">
                         @csrf
                         <button type="submit" class="dropdown-item">
                             <i class="ph-sign-out me-2"></i>
