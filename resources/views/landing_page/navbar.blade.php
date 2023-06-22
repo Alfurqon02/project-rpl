@@ -7,8 +7,8 @@
       <li><a href="#about">About Us</a></li>
       <li class="menu-has-children"><a href="">Account</a>
         <ul>
-          <li><a href="#login">Login</a></li>
-          <li><a href="#register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Sign Up</a></li>
         </ul>
       </li>
     </ul>
