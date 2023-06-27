@@ -1,5 +1,7 @@
 @extends('dashboard.layouts.main')
-
+@section('title')
+DNA Coffe | Tambah Menu
+@endsection
 @section('container')
     <div class="page-header page-header-light shadow">
         <div class="page-header-content d-lg-flex">

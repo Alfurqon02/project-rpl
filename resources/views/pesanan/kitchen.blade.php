@@ -1,4 +1,7 @@
 @extends('dashboard.layouts.main')
+@section('title')
+DNA Coffe | Kitchen Display
+@endsection
 
 @section('container')
     <div class="page-header page-header-light shadow">

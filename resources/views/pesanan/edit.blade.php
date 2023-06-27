@@ -1,4 +1,7 @@
 @extends('dashboard.layouts.main')
+@section('title')
+DNA Coffe | Edit Pesanan
+@endsection
 
 @section('container')
     <div class="page-header page-header-light shadow">

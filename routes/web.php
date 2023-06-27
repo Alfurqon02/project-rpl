@@ -26,7 +26,7 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::resource('/pesanan', PesananController::class)->middleware('auth');
 Route::resource('/pesanan/{pesanan}/menu', MenuController::class)->middleware('auth');
-Route::get('/api/pesanan/{id}', [PesananController::class, 'apiPesanan'])->name('apiPesanan');
+Route::get('/api/pesanan/{id}', [PesananController::class, 'apiPesanan'])->name('apiPesanan')->middleware('auth');
 Route::get('/kitchen', [PesananController::class, 'tampilanKitchen'])->name('tampilanKitchen');
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
