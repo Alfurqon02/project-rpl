@@ -12,6 +12,7 @@ use App\Models\MenuPesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class PesananController extends Controller
 {
     /**
@@ -20,8 +21,15 @@ class PesananController extends Controller
 
     public function index()
     {
+        $menu = DB::table('pesanan')
+                ->join('menu_pesanan', 'pesanan.id', '=', 'menu_pesanan.id_pesanan')
+                ->join('menu', 'menu_pesanan.id_menu', '=', 'menu.id')
+                ->select('menu_pesanan.id_pesanan as pesanan',
+                        'menu_pesanan.id_menu as menu',
+                    'menu_pesanan.jumlah_menu as jumlah')->get();
         return view ('pesanan.index',[
             'pesanan' => Pesanan::all(),
+            'menu' => $menu,
         ]);
     }
 
@@ -46,7 +54,7 @@ class PesananController extends Controller
             'nama_pemesan' => 'required|string',
             'no_hp_pemesan' => 'required',
             'meja_pesanan'=> 'required',
-            'menu_pesanan' => 'required',
+            // 'menu_pesanan' => 'required',
             'total_pembayaran' => 'required',
             'status_pembayaran' => 'required',
             'status_pesanan' => 'required',
@@ -65,14 +73,14 @@ class PesananController extends Controller
             ]);
 
         }
-        $menu = $request->menu_pesanan;
-        for ($i = 0; $i < sizeof($menu); $i++){
-            MenuPesanan::insert([
-                'id_menu' => $menu[$i],
-                'id_pesanan' => $idPesanan
-            ]);
+        // $menu = $request->menu_pesanan;
+        // for ($i = 0; $i < sizeof($menu); $i++){
+        //     MenuPesanan::insert([
+        //         'id_menu' => $menu[$i],
+        //         'id_pesanan' => $idPesanan
+        //     ]);
 
-        }
+        // }
 
         return redirect(route('pesanan.index'))->with('success', 'Pesanan berhasil dibuat');
     }
@@ -180,8 +188,8 @@ class PesananController extends Controller
             'nama_pemesan' => 'required|string',
             'no_hp_pemesan' => 'required',
             'meja_pesanan'=> 'required',
-            'menu_pesanan' => 'required',
-            'total_pembayaran' => 'required',
+            // 'menu_pesanan' => 'required',
+            // 'total_pembayaran' => 'required',
             'status_pembayaran' => 'required',
             'status_pesanan' => 'required',
             'jam_booking' => 'required'
@@ -190,7 +198,7 @@ class PesananController extends Controller
         $pesanan->update($validateData);
 
         MejaPesanan::where('id_pesanan', $pesanan->id)->delete();
-        MenuPesanan::where('id_pesanan', $pesanan->id)->delete();
+        // MenuPesanan::where('id_pesanan', $pesanan->id)->delete();
 
         $idPesanan = $pesanan->id;
         $meja = $request->meja_pesanan;
@@ -201,14 +209,14 @@ class PesananController extends Controller
             ]);
 
         }
-        $menu = $request->menu_pesanan;
-        for ($i = 0; $i < sizeof($menu); $i++){
-            MenuPesanan::insert([
-                'id_menu' => $menu[$i],
-                'id_pesanan' => $idPesanan
-            ]);
+        // $menu = $request->menu_pesanan;
+        // for ($i = 0; $i < sizeof($menu); $i++){
+        //     MenuPesanan::insert([
+        //         'id_menu' => $menu[$i],
+        //         'id_pesanan' => $idPesanan
+        //     ]);
 
-        }
+        // }
 
 
 
@@ -220,11 +228,35 @@ class PesananController extends Controller
      */
     public function destroy(Pesanan $pesanan)
     {
-        $pesanan->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        Pesanan::where('id', $pesanan->id)->delete();
+        MejaPesanan::where('id_pesanan', $pesanan->id)->delete();
+        MenuPesanan::where('id_pesanan', $pesanan->id)->delete();
         return redirect(route('pesanan.index'))->with('success', 'Pesanan Telah dihapus!');
     }
 
-    public function tampilanKitchen($id){
+    public function tampilanKitchen(){
+
+        // $pesanan = DB::table('pesanan')
+        //         ->join('menu_pesanan', 'pesanan.id', '=', 'menu_pesanan.id_pesanan')
+        //         ->join('menu', 'menu_pesanan.id_menu', '=', 'menu.id')
+        //         ->select('menu_pesanan.id_pesanan as pesanan',
+        //                 'menu.nama as menu',
+        //                 'menu_pesanan.id_menu as id_menu',
+        //                 'menu_pesanan.jumlah_menu as jumlah',
+        //                 'pesanan.nama_pemesan as nama_pemesan',
+        //                 'pesanan.jam_booking as jam',
+        //                 'pesanan.tanggal_booking as tanggal'
+        //                 )->get();
+        // return Pesanan::with('menu')->get();
+        return view ('pesanan.kitchen',[
+            // pesanan' => Pesanan::all(),
+            'pesanan' => Pesanan::all()
+        ]);
+
+    }
+
+    public function apiPesanan($id){
         // dd($id);
         $pesanan = DB::table('parameter_status_pesanan')
         ->join('pesanan', 'parameter_status_pesanan.id', '=', 'pesanan.status_pesanan')
@@ -240,12 +272,14 @@ class PesananController extends Controller
                 'pesanan.jam_booking as jam_booking',
                 'parameter_status_pesanan.nama as status_pesanan',
                 'pesanan.total_pembayaran as total_pembayaran',
-                'pesanan.created_at as tanggal_pesanan',
+                'pesanan.tanggal_booking as tanggal_pesanan',
                 'pesanan.status_pembayaran',
                 'meja.kode as kode_meja',
                 'area.nama as nama_area',
                 'menu.nama as menu')
         ->get();
+
+
 
         return json_encode($pesanan);
     }

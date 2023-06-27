@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('id_pesanan');
             $table->unsignedBigInteger('id_menu');
+            $table->integer('jumlah_menu')->nullable();
             $table->timestamps();
 
             $table->foreign('id_pesanan')->references('id')->on('pesanan');

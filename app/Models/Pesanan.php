@@ -37,7 +37,8 @@ class Pesanan extends Model
     }
 
     public function menu(){
-        return $this->belongsToMany(Menu::class, 'menu_pesanan', 'id_menu', 'id_pesanan');
+        return $this->belongsToMany(Menu::class, 'menu_pesanan', 'id_pesanan', 'id_menu')->withPivot('jumlah_menu');;
+        // return $this->belongsToMany(Menu::class, 'menu_pesanan', )->withPivot('id_pesanan', 'id_menu');
     }
 
     public function createdBy(){

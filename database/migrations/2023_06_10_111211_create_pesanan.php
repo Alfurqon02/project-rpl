@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_pemesan');
             $table->string('no_hp_pemesan');
-            $table->string('total_pembayaran');
+            $table->integer('total_pembayaran')->nullable();
             $table->unsignedBigInteger('status_pesanan');
             $table->boolean('status_pembayaran');
             $table->date('tanggal_booking');

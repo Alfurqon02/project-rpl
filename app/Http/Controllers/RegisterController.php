@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
@@ -13,7 +13,7 @@ class RegisterController extends Controller
     {
         return view('auth.login');
     }
-    
+
     public function actionregister(Request $request)
     {
         $user = User::create([

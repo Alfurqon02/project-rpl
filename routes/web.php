@@ -5,6 +5,8 @@ use App\Http\Controllers\PesananController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +24,12 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::resource('/pesanan', PesananController::class);
-Route::get('/api/pesanan/{id}', [PesananController::class, 'tampilanKitchen'])->name('apiPesanan');
+Route::resource('/pesanan', PesananController::class)->middleware('auth');
+Route::resource('/pesanan/{pesanan}/menu', MenuController::class)->middleware('auth');
+Route::get('/api/pesanan/{id}', [PesananController::class, 'apiPesanan'])->name('apiPesanan');
+Route::get('/kitchen', [PesananController::class, 'tampilanKitchen'])->name('tampilanKitchen');
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
-Route::get('/pesanan', [PesananController::class, 'index'])->name('pesanan');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');

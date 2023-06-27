@@ -39,7 +39,7 @@
                     </a>
                     <ul class="nav-group-sub collapse">
                         <li class="nav-item"><a href="{{ route('pesanan.index') }}" class="nav-link">Buat Pesanan</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Tampilan Kitchen</a></li>
+                        <li class="nav-item"><a href="{{ route('tampilanKitchen') }}" class="nav-link">Tampilan Kitchen</a></li>
                     </ul>
                 </li>
             </ul>

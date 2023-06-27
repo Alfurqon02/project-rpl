@@ -55,14 +55,17 @@
                             <tr>
                                 <td>{{ $p->nama_pemesan }}</td>
                                 <td>{{ $p->no_hp_pemesan }}</td>
-                                <td>{{ $p->total_pembayaran }}</td>
+                                <td>{{ number_format($p->total_pembayaran, 2, ',', '.') }}</td>
                                 <td>{{ $p->jam_booking }}</td>
-                                <td>{{ $p->created_at->format('d-m-Y') }}</td>
+                                <td>{{ strftime('%A, %e %B %Y', strtotime($p->tanggal_booking)) }}</td>
                                 <td>
+                                    <a href="{{ route('menu.create', $p->id) }}" class="btn btn-outline-primary btn-icon"><i
+                                            class="ph-plus"></i></a>
                                     <button type="button" class="btn btn-outline-success btn-icon"
                                         data-id="{{ $p->id }}" onclick="" data-bs-toggle="modal"
                                         data-bs-target="#showDetail"><i class="ph-eye"></i></button>
-                                    <a href="{{ route('pesanan.edit', $p->id) }}" class="btn btn-outline-warning btn-icon"><i class="ph-pencil"></i></a>
+                                    <a href="{{ route('pesanan.edit', $p->id) }}"
+                                        class="btn btn-outline-warning btn-icon"><i class="ph-pencil"></i></a>
                                     <button type="button" class="btn btn-outline-danger btn-icon"
                                         data-id="{{ $p->id }}" onclick="" data-bs-toggle="modal"
                                         data-bs-target="#confirmDelete"><i class="ph-trash"></i></button>
@@ -171,11 +174,12 @@
         // Detail
         $('#showDetail').on('show.bs.modal', function(e) {
             var id_pesanan = $(e.relatedTarget).data('id');
-            const url = '{{ url("api/pesanan") }}' + '/' + id_pesanan;
+            const url = '{{ url('api/pesanan') }}' + '/' + id_pesanan;
+            // let menuCount = {{ count($menu) }};
 
             $.get(url, function(response) {
                 response = JSON.parse(response)
-                for (let i=0;i<response.length;i++){
+                for (let i = 0; i < response.length; i++) {
                     var nama_pemesan = response[i].nama_pemesan;
                     var no_hp_pemesan = response[i].no_hp_pemesan;
                     var menu = response[i].menu;
@@ -189,30 +193,34 @@
                     // $(e.currentTarget).find('td#nama').text(nama).attr('class', 'w-75');
                     $(e.currentTarget).find('td#nama_pemesan').text(nama_pemesan);
                     $(e.currentTarget).find('td#no_hp_pemesan').text(no_hp_pemesan);
-                    if ($(e.currentTarget).find('td#nama_area').text() == ""){
+                    if ($(e.currentTarget).find('td#nama_area').text() == "") {
                         $(e.currentTarget).find('td#nama_area').text(nama_area);
                     } else {
                         var lastArea = $(e.currentTarget).find('td#nama_area').text().split(', ')
                         lastArea = lastArea[lastArea.length - 1]
-                        if (lastArea != nama_area){
+                        if (lastArea != nama_area) {
                             $(e.currentTarget).find('td#nama_area').text(lastArea + ', ' + nama_area)
                         }
                     }
-                    if ($(e.currentTarget).find('td#menu').text() == ""){
+                    // for (let i = 0; i<menuCount.length;i++){
+                    //     document.getElementById('#menu')[i];
+                    // }
+                    if ($(e.currentTarget).find('td#menu').text() == "") {
                         $(e.currentTarget).find('td#menu').text(menu);
                     } else {
-                        var lastMenu = $(e.currentTarget).find('td#menu').text().split(', ')
-                        lastMenu = lastMenu[lastMenu.length - 1]
-                        if (lastMenu != menu){
-                            $(e.currentTarget).find('td#menu').text(lastMenu + ', ' + menu)
+                        var lastMenu = $(e.currentTarget).find('td#menu').text().split(', ');
+                        if (!lastMenu.includes(menu)) {
+                            lastMenu.push(menu);
+                            $(e.currentTarget).find('td#menu').text(lastMenu.join(', '));
                         }
                     }
-                    if ($(e.currentTarget).find('td#kode_meja').text() == ""){
+
+                    if ($(e.currentTarget).find('td#kode_meja').text() == "") {
                         $(e.currentTarget).find('td#kode_meja').text(kode_meja);
                     } else {
                         var lastMeja = $(e.currentTarget).find('td#kode_meja').text().split(', ')
                         lastMeja = lastMeja[lastMeja.length - 1]
-                        if (lastMeja != kode_meja){
+                        if (lastMeja != kode_meja) {
                             $(e.currentTarget).find('td#kode_meja').text(lastMeja + ', ' + kode_meja)
                         }
                     }
@@ -220,12 +228,12 @@
                     $(e.currentTarget).find('td#status_pesanan').text(status_pesanan);
                     $(e.currentTarget).find('td#jam_booking').text(jam_booking);
                     $(e.currentTarget).find('td#tanggal_pesanan').text(tanggal_pesanan);
-            }
+                }
 
             });
         });
 
-        $('#showDetail').on('hide.bs.modal', function (e) {
+        $('#showDetail').on('hide.bs.modal', function(e) {
             $(e.currentTarget).find('td#nama_pemesan').text("");
             $(e.currentTarget).find('td#no_hp_pemesan').text("");
             $(e.currentTarget).find('td#nama_area').text("");

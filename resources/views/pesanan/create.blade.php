@@ -37,7 +37,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">No Hp Pemesan</label>
-                        <input type="text" class="form-control" placeholder="Nama Pemesan" name="no_hp_pemesan">
+                        <input type="text" class="form-control" placeholder="No Hp Pemesan" name="no_hp_pemesan">
                     </div>
 
                     <div class="mb-2">
@@ -53,21 +53,6 @@
                     <div class="mb-2">
                         <label class="form-label">Jam Booking</label>
                         <input type="time" class="form-control" name="jam_booking">
-                    </div>
-
-                    <div class="mb-2">
-                        <label class="col-form-label">Menu</label>
-                        <div class="col">
-                            <select class="form-control multiselect" multiple="multiple" name="menu_pesanan[]">
-                                @foreach ($kategori as $k)
-                                <optgroup label="{{ $k->nama }}">
-                                    @foreach ($k->menu as $m)
-                                    <option value="{{ $m->id }}">{{ $m->nama }}</option>
-                                    @endforeach
-                                </optgroup>
-                                @endforeach
-                            </select>
-                        </div>
                     </div>
 
                     <div class="mb-2">

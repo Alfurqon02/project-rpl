@@ -68,7 +68,7 @@
                             name="jam_booking" value="{{ old('jam_booking', $p->jam_booking) }}">
                     </div>
 
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label class="col-form-label">Menu</label>
                         <div class="col">
                             <select class="form-control multiselect" multiple="multiple" name="menu_pesanan[]">
@@ -81,7 +81,7 @@
                                 @endforeach
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="mb-3">
                         <label class="col-form-label">Meja</label>

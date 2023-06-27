@@ -16,11 +16,4 @@ class MenuPesanan extends Pivot
 
     protected $guarded = ['id'];
 
-    public function menu(){
-        return $this->belongsToMany(Menu::class,'menu_pesanan', 'id_menu', 'id_pesanan');
-    }
-
-    public function pesanan(){
-        return $this->belongsToMany(Pesanan::class, 'menu_pesanan', 'id_menu', 'id_pesanan');
-    }
 }
