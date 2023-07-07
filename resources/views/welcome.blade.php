@@ -9,40 +9,38 @@
 
           <header id="header" id="home">			  	
             <div class="container">
-                <div class="row align-items-center justify-content-between d-flex">
-                  <div id="logo">
-                    <a href="#"><img src="assets_landing_page/img/logodna.png" style="width: 100px" alt="" title="" /></a>
-                    @include('landing_page.navbar');	
-                  </div>
-                  	    		
-                </div>
+                    @include('landing_page.navbar');			
             </div>
-          </header><!-- #header -->
+          </header>
 
 
         <!-- start banner Area -->
         <section class="carousel_8c38" id="carousel">
-            {{-- <ol class="u-absolute-hcenter u-carousel-indicators u-block-fc40-2">
-                <li data-u-target="#carousel_8c38" class="u-active-white u-palette-3-base u-shape-circle" data-u-slide-to="0" style="width: 10px; height: 10px;"></li>
-                <li data-u-target="#carousel_8c38" class="u-active-white u-palette-3-base u-shape-circle u-active" style="width: 10px; height: 10px;" data-u-slide-to="1"></li>
-            </ol> --}}
+
             <div id="carousel_8c38" class="carousel slide" data-bs-ride="carousel">
+
+                {{-- <div class="carousel-indicators">
+                    <button type="button" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-slide-to="2"></button>
+                </div> --}}
+
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <div class="container">
-
-                        <div class="row fullscreen d-flex align-items-center justify-content-start">
-                            <div class="banner-content col-lg-7">
-                                <img src="assets_landing_page/img/header-bg.jpg">
-                                <h6 class="text-white text-uppercase">Coffee, yes  ||  You, maybe</h6>
-                                <h1>
-                                    DNA<br>
-                                    Spot Cafe		
-                                </h1>
-                                <a href="#" class="primary-btn text-uppercase">Book Now!</a>
-                            </div>											
+                        <div class="banner-area">
+                            <div class="container">
+                                <div class="row fullscreen d-flex align-items-center justify-content-start">
+                                    <div class="banner-content col-lg-7">
+                                        <h6 class="text-white text-uppercase">Coffee, yes  ||  You, maybe</h6>
+                                        <h1>
+                                            DNA<br>
+                                            Spot Cafe		
+                                        </h1>
+                                        <a href="https://wa.me/6282124923532" class="primary-btn text-uppercase">Book Now!</a>
+                                    </div>											
+                                </div>
+                            </div>
                         </div>
-                    </div>
                     </div>
             
                     <div class="carousel-item active">
@@ -58,37 +56,21 @@
                     </div>
             
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <button class="carousel-control-prev" href="#carouselExampleFade" type="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="sr-only">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" href="#carouselExampleFade" type="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
+                    <span class="sr-only">Next</span>
+                </button>
                 
-              </div>
-        </section>
-
-
-        <section class="banner-area" id="home">	
-            <div class="container">
-                <div class="row fullscreen d-flex align-items-center justify-content-start">
-                    <div class="banner-content col-lg-7">
-                        <h6 class="text-white text-uppercase">Coffee, yes  ||  You, maybe</h6>
-                        <h1>
-                            DNA<br>
-                            Spot Cafe		
-                        </h1>
-                        <a href="#" class="primary-btn text-uppercase">Book Now!</a>
-                    </div>											
-                </div>
             </div>
         </section>
-        <!-- End banner Area -->	
 
-        <!-- Start video-sec Area -->
-        <section class="video-sec-area pb-100 pt-40" id="about">
+        <!-- Introduce -->
+        <section class="video-sec-area pb-100 pt-40">
             <div class="container">
                 <div class="row justify-content-start align-items-center">
                     <div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
@@ -105,10 +87,10 @@
                 </div>
             </div>	
         </section>
-        <!-- End video-sec Area -->
+
         
-        <!-- Start menu Area -->
-        <section class="menu-area section-gap" id="coffee">
+        <!-- Tipe ruangan -->
+        <section class="menu-area section-gap" id="room">
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="menu-content pb-60 col-lg-10">
@@ -161,10 +143,10 @@
                 </div>
             </div>	
         </section>
-        <!-- End menu Area -->
         
-        <!-- Start gallery Area -->
-        <section class="gallery-area section-gap" id="gallery">
+        
+        <!-- Menu Makanan & Minuman -->
+        <section class="gallery-area section-gap" id="menu">
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="menu-content pb-60 col-lg-10">
@@ -175,47 +157,17 @@
                     </div>
                 </div>						
                 <div class="row">
-                    {{-- <div class="col-lg-8">
-                        <a href="assets_landing_page/img/drink.png" class="img-pop-home">
-                            <img class="img-fluid" src="assets_landing_page/img/drink.png" alt="">
-                        </a>
-                    </div> --}}
-
                     <div class="col-lg-10" >
                         <a href="assets_landing_page/img/merge.png" class="img-pop-home">
                             <img class="img-fluid" src="assets_landing_page/img/merge.png" alt="" style="margin-left: 100px">
                         </a>
                     </div>
-                    {{-- <div class="col-lg-4">
-                        <a href="assets_landing_page/menu-bg.jpg" class="img-pop-home">
-                            <img class="img-fluid" src="menu-bg.jpg" alt="">
-                        </a>	
-                        <a href="assets_landing_page/img/g2.jpg" class="img-pop-home">
-                            <img class="img-fluid" src="assets_landing_page/img/g2.jpg" alt="">
-                        </a>	
-                    </div>
-                    <div class="col-lg-8">
-                        <a href="assets_landing_page/img/g3.jpg" class="img-pop-home">
-                            <img class="img-fluid" src="assets_landing_page/img/g3.jpg" alt="">
-                        </a>	
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <a href="assets_landing_page/img/g4.jpg" class="img-pop-home">
-                                    <img class="img-fluid" src="assets_landing_page/img/g4.jpg" alt="">
-                                </a>	
-                            </div>
-                            <div class="col-lg-6">
-                                <a href="assets_landing_page/img/g5.jpg" class="img-pop-home">
-                                    <img class="img-fluid" src="assets_landing_page/img/g5.jpg" alt="">
-                                </a>	
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>	
         </section>
 
-        <section class="gallery-area section-gap" id="gallery">
+        <!-- View Area -->
+        <section class="gallery-area section-gap">
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="menu-content pb-60 col-lg-10">
@@ -251,7 +203,7 @@
 
 
 
-        <!-- End gallery Area -->
+        <!-- Fasiulitas & Rules -->
         <section class="menu-area section-gap" id="coffee">
             <div class="container">
                 <div class="row d-flex justify-content-center">
@@ -299,10 +251,10 @@
                 </div>
             </div>	
         </section>
-        <!-- Start review Area -->
+       
         
-        <!-- Start blog Area -->
-        <section class="blog-area section-gap" id="blog">
+        <!-- Events -->
+        <section class="blog-area section-gap" id="event">
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="menu-content pb-60 col-lg-10">
