@@ -11,8 +11,8 @@
       <li><a href="#event">Event</a></li>
       <li><a href="#room">Room</a></li>
       <li class="menu-active"><a href="#home">Home</a></li>
-      <div id="logo">
+      {{-- <div id="logo">
         <a href="#"><img src="assets_landing_page/img/logodna.png" style="width: 100px" alt="" title="" /></a>
-      </div>
+      </div> --}}
     </ul>
   </nav>

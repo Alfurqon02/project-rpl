@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 <head>
-    @extends('landing_page.main');
-    @include('landing_page.stylesheet');
+    @extends('landing_page.main')
+    @include('landing_page.stylesheet')
 </head>
 
     <body>
 
-          <header id="header" id="home">			  	
+          <header id="header" id="home">
             <div class="container">
-                    @include('landing_page.navbar');			
+                    @include('landing_page.navbar')
             </div>
           </header>
 
@@ -34,27 +34,27 @@
                                         <h6 class="text-white text-uppercase">Coffee, yes  ||  You, maybe</h6>
                                         <h1>
                                             DNA<br>
-                                            Spot Cafe		
+                                            Spot Cafe
                                         </h1>
                                         <a href="https://wa.me/6282124923532" class="primary-btn text-uppercase">Book Now!</a>
-                                    </div>											
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="carousel-item active">
                         <div class="row fullscreen d-flex align-items-center justify-content-start">
                                 <img src="assets_landing_page/img/nnroom.png">
                         </div>
                     </div>
-            
+
                     <div class="carousel-item active">
                         <div class="row fullscreen d-flex align-items-center justify-content-start">
                                 <img src="assets_landing_page/img/nnnnnnbooking.png">
                         </div>
                     </div>
-            
+
                 </div>
                 <button class="carousel-control-prev" href="#carouselExampleFade" type="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -65,7 +65,7 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </button>
-                
+
             </div>
         </section>
 
@@ -75,9 +75,9 @@
                 <div class="row justify-content-start align-items-center">
                     <div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
                        <img class="img-fluid" src="assets_landing_page/img/dna.png" alt="">
-                    </div>						
+                    </div>
                     <div class="col-lg-6 video-left">
-                    
+
                         <h1>DNA Spot Cafe </h1>
                         <h3>[Di-En-E-Spot-Ka-Fe]noun</h3>
                         <p>
@@ -85,10 +85,10 @@
                         </p>
                     </div>
                 </div>
-            </div>	
+            </div>
         </section>
 
-        
+
         <!-- Tipe ruangan -->
         <section class="menu-area section-gap" id="room">
             <div class="container">
@@ -99,7 +99,7 @@
                             <p>Dapat menyesuaikan request</p>
                         </div>
                     </div>
-                </div>						
+                </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="single-menu">
@@ -111,7 +111,7 @@
                             </div>
                             <p>
                                 <img class="room-meet" src="assets_landing_page/img/room_meeting.jpg">
-                            </p>								
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -124,7 +124,7 @@
                             </div>
                             <p>
                                 <img class="room-meet" src="assets_landing_page/img/room_sofa.jpg">
-                            </p>								
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -137,14 +137,14 @@
                             </div>
                             <p>
                                 <img class="room-meet" src="assets_landing_page/img/room_rumput.jpg">
-                            </p>								
+                            </p>
                         </div>
-                    </div>											
+                    </div>
                 </div>
-            </div>	
+            </div>
         </section>
-        
-        
+
+
         <!-- Menu Makanan & Minuman -->
         <section class="gallery-area section-gap" id="menu">
             <div class="container">
@@ -155,7 +155,7 @@
                             <p>Belum termasuk PPN 10% </p>
                         </div>
                     </div>
-                </div>						
+                </div>
                 <div class="row">
                     <div class="col-lg-10" >
                         <a href="assets_landing_page/img/merge.png" class="img-pop-home">
@@ -163,7 +163,7 @@
                         </a>
                     </div>
                 </div>
-            </div>	
+            </div>
         </section>
 
         <!-- View Area -->
@@ -175,15 +175,15 @@
                             <h1 class="mb-10">View Area</h1>
                         </div>
                     </div>
-                </div>						
+                </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <a href="assets_landing_page/img/pic1.png" class="img-pop-home">
                             <img class="img-fluid" src="assets_landing_page/img/pic1.png" alt="">
-                        </a>	
+                        </a>
                         <a href="assets_landing_page/img/pic2.png" class="img-pop-home">
                             <img class="img-fluid" src="assets_landing_page/img/pic2.png" alt="">
-                        </a>	
+                        </a>
                         <a href="assets_landing_page/img/pic3.png" class="img-pop-home">
                             <img class="img-fluid" src="assets_landing_page/img/pic3.png" alt="">
                         </a>
@@ -194,11 +194,11 @@
                         </a>
                         <a href="assets_landing_page/img/indoor.png" class="img-pop-home">
                             <img class="img-fluid" src="assets_landing_page/img/indoor.png" alt="">
-                        </a>	
+                        </a>
 
                     </div>
                 </div>
-            </div>	
+            </div>
         </section>
 
 
@@ -213,7 +213,7 @@
                             <p>Fasilitas, Rules, Promo</p>
                         </div>
                     </div>
-                </div>						
+                </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="single-menu">
@@ -236,7 +236,7 @@
                                 <li><p><strong>Photo product</strong><br>
                                         ~ HP  : Konsumsi makanan/minuman minimal Rp 75.000 & Promote DNA Spot Cafe <br>
                                         ~ Pro : Konsumsi makanan/minuman minimal Rp 150.000 & Promote DNA Spot Cafe </p></li>
-					
+
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -247,12 +247,12 @@
                             <img src="assets_landing_page/img/disc.png" alt="">
 
                         </div>
-                    </div>											
+                    </div>
                 </div>
-            </div>	
+            </div>
         </section>
-       
-        
+
+
         <!-- Events -->
         <section class="blog-area section-gap" id="event">
             <div class="container">
@@ -262,7 +262,7 @@
                             <h1 class="mb-10">Events</h1>
                         </div>
                     </div>
-                </div>						
+                </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 single-blog">
                         <img class="img-fluid" src="assets_landing_page/img/accoustic.png" alt="">
@@ -287,9 +287,9 @@
                             Menu : Burger, French Fries, & Mango Bingo drink <br>
                             Registration now \(^^)/
                         </p>
-                    </div>						
+                    </div>
                 </div>
-            </div>	
+            </div>
         </section>
         @include('landing_page.javascript');
     </body>
